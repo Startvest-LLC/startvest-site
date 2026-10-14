@@ -1,5 +1,4 @@
 ---
-import '../styles/global.css';
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, AUTHOR } from '../consts';
 
 interface Props {
@@ -53,6 +52,7 @@ const sitewide = [
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="stylesheet" href="/styles/global.css" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title="StartVest blog" href="/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
