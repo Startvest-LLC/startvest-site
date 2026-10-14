@@ -25,7 +25,7 @@ Fred Brooks put it plainly almost forty years ago: "The hardest single part of b
 
 I've paid for this one myself. At a past job, space in our main DC was tight, so part of the inventory sat in offsite warehouses while the WMS carried it in a virtual location inside the DC. While the ops team worked through consolidations, they asked for a process that would flag which offsite inventory needed to come back to the main building so they could fill orders. It was genuinely complex. We brought in outside consultants to essentially replicate the allocation process inside the WMS, at consultant hourly rates. Then came our own time: testing the logic, adjusting it to ops feedback, retesting, adjusting again. It turned into a mini project of close to six months, and it ended up barely used.
 
-The logic wasn't the problem. The problem was temporary, and we built a permanent, systemic answer to it. Nobody communicated how long the offsite setup was expected to last, so nobody weighed that against six months of build. Had we known, we might not have pursued a systemic solution at all. One question before the first consultant hour would have changed the decision: how long will we need this? Cheap question. Expensive answer.
+The problem was temporary, and we built a permanent, systemic answer to it. Nobody communicated how long the offsite setup was expected to last, so nobody weighed that against six months of build. Had we known, we might not have pursued a systemic solution at all. One question before the first consultant hour would have changed the decision: how long will we need this? Cheap question. Expensive answer.
 
 ## Why can't the person asking just write the spec?
 
