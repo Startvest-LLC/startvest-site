@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { AUTHOR } from '../consts';
+---
+<Base title="Privacy" description="What startvest.ai collects: almost nothing.">
+  <h1>Privacy</h1>
+  <p class="lede">Short version: this site sets no cookies and runs no analytics or ad trackers.</p>
+  <ul>
+    <li>Pages are served by Cloudflare, which processes standard request data, such as IP address, to deliver and protect the site.</li>
+    <li>Fonts load from Google Fonts, so your browser requests them from Google.</li>
+    <li>If you email me, I use your message only to reply. I don't add you to a list.</li>
+  </ul>
+  <p>Questions: <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a>.</p>
+  <p class="meta">Updated October 14, 2026.</p>
+</Base>
