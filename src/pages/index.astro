@@ -6,31 +6,68 @@ import { getPublishedPosts, formatDate } from '../lib/posts';
 const posts = (await getPublishedPosts()).slice(0, 3);
 ---
 <Base title="StartVest">
-  <p class="eyebrow">Tom Pinder · StartVest</p>
-  <h1>Vague operational asks, turned into working AI systems.</h1>
-  <p class="lede">{POSITIONING}</p>
+  <section class="hero">
+    <p class="eyebrow">Tom Pinder · StartVest</p>
+    <h1>Vague operational asks, turned into <em>working AI systems.</em></h1>
+    <p class="lede">{POSITIONING}</p>
+    <ul class="hero-stats">
+      <li><b>15</b> years on the floor</li>
+      <li>Manhattan SCALE · SQL Server · SSRS</li>
+      <li>Built with Claude Code</li>
+    </ul>
+  </section>
 
-  <h2>The problem</h2>
+  <h2 class="loc"><span class="num">01</span>The problem</h2>
   <p>Operations teams hand engineers vague requests. Nobody can write the spec, so scope churns and the pilot stalls. Most AI projects in operations don't fail on the model. They fail between the ask and the build, and again at adoption.</p>
   <p>I spent 15 years on the operations side: Manhattan SCALE WMS across multi-site distribution networks, ERP integrations, and the SQL Server and SSRS reporting a floor actually runs on. Now I build the AI tools, with the guardrails and the checks visible.</p>
 
-  <h2>Work you can inspect</h2>
-  <div class="card">
-    <h3><a href="https://github.com/tjpinder/intake-kit">intake-kit</a></h3>
-    <p>Turns a vague ops request into a build-ready spec. A guided intake gates each item, and every requirement traces back to the requester's own words. Open source.</p>
-  </div>
-  <div class="card">
-    <h3><a href="https://github.com/tjpinder/sql-xray">sql-xray</a></h3>
-    <p>A read-only SSRS and SQL Server estate scanner. It finds duplicates, contradictions, dependencies, and risks, then produces a keep, consolidate, retire, or review list. Open source.</p>
+  <h2 class="loc"><span class="num">02</span>Work you can inspect</h2>
+  <div class="labels">
+    <article class="label-card">
+      <div class="label-top"><span>Open source</span><span>tjpinder/intake-kit</span></div>
+      <div class="label-body">
+        <h3><a href="https://github.com/tjpinder/intake-kit">intake-kit</a></h3>
+        <p>Turns a vague ops request into a build-ready spec. A guided intake gates each item, and every requirement traces back to the requester's own words.</p>
+      </div>
+      <div class="barcode" aria-hidden="true"></div>
+      <p class="barcode-id" aria-hidden="true">SPEC-0001</p>
+    </article>
+    <article class="label-card">
+      <div class="label-top"><span>Open source</span><span>tjpinder/sql-xray</span></div>
+      <div class="label-body">
+        <h3><a href="https://github.com/tjpinder/sql-xray">sql-xray</a></h3>
+        <p>A read-only SSRS and SQL Server estate scanner. It finds duplicates, contradictions, dependencies, and risks, then produces a keep, consolidate, retire, or review list.</p>
+      </div>
+      <div class="barcode" aria-hidden="true"></div>
+      <p class="barcode-id" aria-hidden="true">SCAN-0002</p>
+    </article>
   </div>
   <p class="muted">Also: the anti-fabrication layer behind <a href="https://prapi.dev">PRAPI</a>, and the <a href="https://theintegrityframework.org/specs/brief-md">brief.md spec</a> at The Integrity Framework.</p>
 
-  <h2>How I build</h2>
-  <p>I direct coding agents (Claude Code) to write most of the implementation. I own the spec, the guardrails, the testing, and the operational judgment. That split is the point, not a secret.</p>
+  <h2 class="loc"><span class="num">03</span>How I build</h2>
+  <p>I direct coding agents (Claude Code) to write most of the implementation. That split is the point, not a secret.</p>
+  <div class="split">
+    <div>
+      <h3>Delegated</h3>
+      <ul>
+        <li>Implementation</li>
+        <li>Every change checked before it ships</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Owned</h3>
+      <ul>
+        <li>The spec</li>
+        <li>The guardrails</li>
+        <li>The testing</li>
+        <li>The operational judgment</li>
+      </ul>
+    </div>
+  </div>
 
   {posts.length > 0 && (
     <>
-      <h2>Recent writing</h2>
+      <h2 class="loc"><span class="num">04</span>Recent writing</h2>
       <ul class="post-list">
         {posts.map((p) => (
           <li>
