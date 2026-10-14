@@ -1,0 +1,49 @@
+---
+import Base from './Base.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import { AUTHOR, SITE_URL, CTA_LINE } from '../consts';
+import { formatDate } from '../lib/posts';
+
+interface Props {
+  title: string;
+  description: string;
+  publishedAt: Date;
+  updatedAt?: Date;
+  category: string;
+  tags: string[];
+  slug: string;
+}
+
+const { title, description, publishedAt, updatedAt, category, tags, slug } = Astro.props;
+const url = `${SITE_URL}/blog/${slug}`;
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: publishedAt.toISOString(),
+  dateModified: (updatedAt ?? publishedAt).toISOString(),
+  mainEntityOfPage: url,
+  url,
+  articleSection: category,
+  keywords: tags.join(', ') || undefined,
+  author: { '@id': `${SITE_URL}/tom-pinder#person`, name: AUTHOR.name, url: AUTHOR.url },
+  publisher: { '@id': `${SITE_URL}/#org`, name: 'StartVest LLC' },
+};
+---
+<Base title={title} description={description} ogType="article" jsonLd={[article]}>
+  <article>
+    <p class="eyebrow">
+      {category}{tags.map((t) => <span class="tag">{t}</span>)}
+    </p>
+    <h1>{title}</h1>
+    <p class="meta">
+      {AUTHOR.name} · <time datetime={publishedAt.toISOString()}>{formatDate(publishedAt)}</time>
+      {updatedAt && <> · Updated <time datetime={updatedAt.toISOString()}>{formatDate(updatedAt)}</time></>}
+    </p>
+    <slot />
+  </article>
+  <AuthorBox />
+  <p class="post-cta">{CTA_LINE} <a href="/contact">Here is how to reach me.</a></p>
+</Base>

@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import { POSITIONING, CTA_LINE } from '../consts';
+import { getPublishedPosts, formatDate } from '../lib/posts';
+
+const posts = (await getPublishedPosts()).slice(0, 3);
+---
+<Base title="StartVest">
+  <p class="eyebrow">Tom Pinder · StartVest</p>
+  <h1>Vague operational asks, turned into working AI systems.</h1>
+  <p class="lede">{POSITIONING}</p>
+
+  <h2>The problem</h2>
+  <p>Operations teams hand engineers vague requests. Nobody can write the spec, so scope churns and the pilot stalls. Most AI projects in operations don't fail on the model. They fail between the ask and the build, and again at adoption.</p>
+  <p>I spent 15 years on the operations side: Manhattan SCALE WMS across multi-site distribution networks, ERP integrations, and the SQL Server and SSRS reporting a floor actually runs on. Now I build the AI tools, with the guardrails and the checks visible.</p>
+
+  <h2>Work you can inspect</h2>
+  <div class="card">
+    <h3><a href="https://github.com/tjpinder/intake-kit">intake-kit</a></h3>
+    <p>Turns a vague ops request into a build-ready spec. A guided intake gates each item, and every requirement traces back to the requester's own words. Open source.</p>
+  </div>
+  <div class="card">
+    <h3><a href="https://github.com/tjpinder/sql-xray">sql-xray</a></h3>
+    <p>A read-only SSRS and SQL Server estate scanner. It finds duplicates, contradictions, dependencies, and risks, then produces a keep, consolidate, retire, or review list. Open source.</p>
+  </div>
+  <p class="muted">Also: the anti-fabrication layer behind <a href="https://prapi.dev">PRAPI</a>, and the <a href="https://theintegrityframework.org/specs/brief-md">brief.md spec</a> at The Integrity Framework.</p>
+
+  <h2>How I build</h2>
+  <p>I direct coding agents (Claude Code) to write most of the implementation. I own the spec, the guardrails, the testing, and the operational judgment. That split is the point, not a secret.</p>
+
+  {posts.length > 0 && (
+    <>
+      <h2>Recent writing</h2>
+      <ul class="post-list">
+        {posts.map((p) => (
+          <li>
+            <span class="meta">{formatDate(p.data.publishedAt)} · {p.data.category}</span>
+            <h3><a href={`/blog/${p.id}`}>{p.data.title}</a></h3>
+            <p>{p.data.description}</p>
+          </li>
+        ))}
+      </ul>
+      <p><a href="/blog">All posts</a></p>
+    </>
+  )}
+
+  <p class="post-cta">{CTA_LINE} <a href="/contact">Here is how to reach me.</a></p>
+</Base>

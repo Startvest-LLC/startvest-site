@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPublishedPosts, formatDate } from '../../lib/posts';
+import { CATEGORIES } from '../../consts';
+
+const posts = await getPublishedPosts();
+---
+<Base title="Blog" description="Operational AI and AI enablement methods, written from the warehouse floor and the build log.">
+  <h1>Blog</h1>
+  <p class="lede">Real operations problems solved with AI, and the methods behind them: specs, guardrails, intake, adoption, evaluation.</p>
+  <p class="meta">Categories: {CATEGORIES.join(' · ')}. <a href="/rss.xml">RSS</a></p>
+
+  {posts.length === 0 ? (
+    <p class="muted">First posts are on the way.</p>
+  ) : (
+    <ul class="post-list">
+      {posts.map((p) => (
+        <li>
+          <span class="meta">
+            {formatDate(p.data.publishedAt)} · {p.data.category}
+            {p.data.tags.map((t) => <span class="tag">{t}</span>)}
+            {p.data.draft && <span class="tag">draft</span>}
+          </span>
+          <h3><a href={`/blog/${p.id}`}>{p.data.title}</a></h3>
+          <p>{p.data.description}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+</Base>

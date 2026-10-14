@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { AUTHOR, CTA_LINE } from '../consts';
+---
+<Base title="Contact" description="Reach Tom Pinder at StartVest.">
+  <h1>Contact</h1>
+  <p class="lede">{CTA_LINE} Turning a vague operational ask into a working AI system, with the guardrails and checks visible.</p>
+  <ul>
+    <li>Email: <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a></li>
+    <li>LinkedIn: <a href={AUTHOR.linkedin}>Tom Pinder</a></li>
+    <li>GitHub: <a href={AUTHOR.github}>tjpinder</a></li>
+  </ul>
+  <p class="muted">Primes and teaming partners: see the <a href="/capabilities">capability statement</a>.</p>
+</Base>

@@ -1,0 +1,18 @@
+{
+  "name": "startvest-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:voice": "node scripts/check-voice.mjs dist",
+    "deploy": "npm run build && npm run check:voice && npx wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/rss": "4.0.11",
+    "@astrojs/sitemap": "3.3.1",
+    "astro": "5.7.10"
+  }
+}

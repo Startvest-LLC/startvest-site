@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import { AUTHOR } from '../consts';
+
+const facts: [string, string][] = [
+  ['Legal name', 'StartVest, LLC'],
+  ['Owner', 'Thomas Pinder'],
+  ['Certifications', 'SBA VetCert SDVOSB and VOSB, 03/30/2026 to 03/30/2029'],
+  ['UEI', 'FJ4ZFNG4XS54'],
+  ['CAGE', '18X56'],
+  ['SAM.gov', 'Active'],
+  ['NAICS', '541512 (primary), 541519, 541715'],
+  ['Business type', 'SDVOSB, VOSB, Small Business, LLC'],
+  ['Established', '2025, Hampstead, NC'],
+  ['Contracting', 'Subcontracts, teaming agreements, T&M or FFP'],
+  ['Contact', 'tom@startvest.ai'],
+];
+---
+<Base
+  title="Capabilities"
+  description="StartVest LLC capability statement: SDVOSB and VOSB. Data, reporting, and AI implementation for operations-heavy organizations. UEI FJ4ZFNG4XS54, CAGE 18X56."
+>
+  <p class="eyebrow">Capability statement</p>
+  <h1>StartVest, LLC</h1>
+  <p class="lede">Data, reporting, and AI implementation for operations-heavy organizations.</p>
+  <p>StartVest is a service-disabled veteran-owned small business. It modernizes the data, reporting, and warehouse systems that operations teams run on, and adds practical, governed AI on top. SBA VetCert certification counts toward prime SDVOSB subcontracting goals.</p>
+
+  <table class="facts">
+    <tbody>
+      {facts.map(([k, v]) => <tr><td>{k}</td><td>{k === 'Contact' ? <a href={`mailto:${v}`}>{v}</a> : v}</td></tr>)}
+    </tbody>
+  </table>
+
+  <h2>Core competencies</h2>
+  <h3>Data and reporting modernization</h3>
+  <ul>
+    <li>SQL Server administration: performance tuning, indexing, schema change, backup, and security and permissions.</li>
+    <li>T-SQL and stored-procedure development. SSRS report authoring, subscriptions, and migration.</li>
+    <li>Data migration, validation, and cross-environment reconciliation. IBM Cognos, Snowflake, Azure SQL.</li>
+  </ul>
+  <h3>Legacy estate discovery and documentation</h3>
+  <ul>
+    <li>Automated inventory of SQL Server and SSRS estates (stored procedures, report definitions, dependencies) with <a href="https://github.com/tjpinder/sql-xray">sql-xray</a>. Produces CSV, JSON, and HTML documentation to de-risk migrations.</li>
+  </ul>
+  <h3>Warehouse and supply-chain systems</h3>
+  <ul>
+    <li>Manhattan SCALE/ILS, HighJump, and Softeon implementation, upgrade, and on-premises-to-SaaS migration.</li>
+    <li>ERP integration (Microsoft Dynamics GP, AX, Navision) via EDI, XML, and REST. RF and labeling (UCC128, ZPL).</li>
+  </ul>
+  <h3>AI implementation</h3>
+  <ul>
+    <li>Azure OpenAI and Anthropic Claude integration. Natural-language-to-SQL with role-based guardrails.</li>
+    <li>Requirements-to-spec automation with human-in-the-loop review (<a href="https://github.com/tjpinder/intake-kit">intake-kit</a>, open source).</li>
+  </ul>
+
+  <h2>Differentiators</h2>
+  <ul>
+    <li>Certified SDVOSB and VOSB through SBA VetCert, through 03/30/2029.</li>
+    <li>Operator, not just integrator: the founder ran these systems in live 24/7 distribution operations.</li>
+    <li>Manhattan SCALE PL2 certified. SCALE 2012 to 2017 and ILS platform certifications.</li>
+    <li>Prior Secret clearance (USMC, lapsed). U.S. citizen, eligible for public trust.</li>
+    <li>Microsoft partner. Azure-native delivery.</li>
+    <li>Remote-first, NC-based (Camp Lejeune and Wilmington region).</li>
+  </ul>
+
+  <h2>Key personnel experience</h2>
+  <p class="meta">Founder's prior employment. Not StartVest corporate past performance.</p>
+  <h3>MillerKnoll · Senior Systems Engineer, WMS · 2021 to 2026</h3>
+  <ul>
+    <li>Led the SCALE 2016 on-prem to SCALE 2025 SaaS migration for 6 sites and about 250 users.</li>
+    <li>Owned production SQL Server and SSRS KPI reporting. RF migration to managed Android.</li>
+  </ul>
+  <h3>TwinMed · WMS Manager · 2019 to 2021</h3>
+  <ul>
+    <li>SCALE operations and SSRS reporting for 10 DCs and about 400 users. Stood up 2 DCs remotely.</li>
+  </ul>
+  <h3>C.H. Robinson · Senior Software Developer · 2021</h3>
+  <ul>
+    <li>SQL data and reporting in a high-volume 3PL. Cut help-desk resolution from 6 to 8 hours down to 1 to 2 hours.</li>
+  </ul>
+
+  <h2>Products</h2>
+  <ul>
+    <li><a href="https://github.com/tjpinder/intake-kit">intake-kit</a>: turn a vague ops request into a build-ready spec (open source).</li>
+    <li><a href="https://github.com/tjpinder/sql-xray">sql-xray</a>: read-only SSRS and SQL Server estate scanner (open source).</li>
+  </ul>
+
+  <p class="post-cta">Teaming or subcontracting: <a href={`mailto:${AUTHOR.email}`}>{AUTHOR.email}</a></p>
+</Base>

@@ -1,0 +1,104 @@
+---
+import Base from '../layouts/Base.astro';
+import { AUTHOR, POSITIONING, SITE_URL } from '../consts';
+
+const faq = [
+  {
+    q: 'What does Tom Pinder do?',
+    a: 'He is an operations and systems engineer who deploys AI into production with accuracy guardrails. He has 15 years in warehouse and supply-chain systems and builds the anti-fabrication layer that keeps AI output verifiable.',
+  },
+  {
+    q: "What is Tom Pinder's AI-deployment background?",
+    a: "He built PRAPI's claim-gate, send-guard, and grounding layer, which block fabricated or unverifiable output before it ships, and he authored the brief.md spec for portable context. His focus is deployment and governance, not model training.",
+  },
+  {
+    q: "What is Tom Pinder's supply-chain and warehouse experience?",
+    a: 'He ran Manhattan SCALE WMS across six distribution centers and built operational reporting on SQL Server, T-SQL, SSRS, Snowflake, and Cognos, covering WMS rollouts, inventory accuracy, throughput, and slotting.',
+  },
+  {
+    q: 'Is Tom Pinder available for work?',
+    a: 'He is open to remote roles in forward-deployed and AI-deployment engineering, implementation and solutions consulting, BI and SQL development, data and supply-chain analysis, and WMS.',
+  },
+];
+
+const profile = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: `${SITE_URL}/tom-pinder`,
+  mainEntity: {
+    '@id': `${SITE_URL}/tom-pinder#person`,
+    '@type': 'Person',
+    name: AUTHOR.name,
+    description:
+      'Operations and systems engineer with 15 years in warehouse and supply-chain systems, now deploying AI into production with accuracy guardrails. USMC combat veteran. Author of the brief.md spec for portable brand context.',
+    homeLocation: { '@type': 'Place', name: 'Hampstead, NC, USA' },
+    knowsAbout: [
+      'AI guardrails',
+      'Safe AI deployment',
+      'Anti-fabrication and grounding for LLMs',
+      'Forward-deployed engineering',
+      'Warehouse management systems (Manhattan SCALE)',
+      'Supply-chain operations',
+      'SQL Server, T-SQL, SSRS',
+      'Snowflake',
+      'Cognos',
+      'Business intelligence and operational reporting',
+    ],
+  },
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base
+  title="Tom Pinder"
+  description="Tom Pinder is an operations and systems engineer with 15 years in warehouse and supply-chain systems, now deploying AI into production with accuracy guardrails. USMC veteran."
+  ogType="profile"
+  jsonLd={[profile, faqLd]}
+  briefLink
+>
+  <h1>Tom Pinder</h1>
+  <p class="lede">{POSITIONING}</p>
+  <p class="meta">
+    <a href={AUTHOR.linkedin}>LinkedIn</a> · <a href={AUTHOR.github}>GitHub</a> ·
+    <a href="/tom-pinder/brief.md">brief.md (machine-readable)</a>
+  </p>
+
+  <p>I spent 15 years running warehouse and supply-chain systems. Now I deploy AI into production with a governance and accuracy focus. The useful part is the overlap: an operations person who has run a distribution floor and also builds the guardrails that keep AI honest.</p>
+
+  <h2>What I work on</h2>
+  <h3>AI guardrails and safe deployment</h3>
+  <p>I build the layer that stops AI from shipping wrong answers. For PRAPI I built the anti-fabrication system: a claim-gate that blocks unverifiable quantitative claims before anything publishes, a send-guard that refuses unresolved placeholders, and grounding that ties generated output back to a verifiable source. I authored the brief.md spec, an open format for giving an LLM the right inputs so it stops hallucinating. The throughline is integrity: AI systems that refuse instead of guess.</p>
+
+  <h3>Warehouse and supply-chain operations</h3>
+  <p>I ran Manhattan SCALE WMS across six distribution centers. I built operational reporting on SQL Server and T-SQL, with 10 years in SSRS and shorter stints in Snowflake and Cognos, in Azure. The work was the real core of distribution: WMS rollouts and go-lives, inventory accuracy, throughput and bottleneck diagnosis, slotting, and the reports operators actually use to run a floor.</p>
+
+  <h3>The intersection</h3>
+  <p>Having run a distribution center's systems, I know where AI helps, where it is theater, and where letting a model touch an inventory decision without a guardrail is a real risk. That is the forward-deployed-engineer-in-logistics profile: translate between the people who run operations and the AI that is supposed to help them, and ship it without breaking trust.</p>
+
+  <h3>How I build</h3>
+  <p>I direct coding agents (Claude Code) for implementation. I own the spec, the guardrails, the testing, and the operational judgment. Open-source work: <a href="https://github.com/tjpinder/intake-kit">intake-kit</a> and <a href="https://github.com/tjpinder/sql-xray">sql-xray</a>.</p>
+
+  <h2>Background</h2>
+  <ul>
+    <li>15 years in operations and systems engineering.</li>
+    <li>Manhattan SCALE WMS across six distribution centers.</li>
+    <li>SQL Server and T-SQL; SSRS (10 years); Snowflake and Cognos; Azure.</li>
+    <li>Built PRAPI's accuracy and anti-fabrication layer. Authored the brief.md spec (<a href="https://theintegrityframework.org/specs/brief-md">theintegrityframework.org</a>).</li>
+    <li>USMC combat veteran (0311 Infantry / RTO). Held a Secret clearance about 20 years ago; it is lapsed and not active.</li>
+    <li>Based in Hampstead, NC. Remote.</li>
+  </ul>
+
+  <h2>Currently</h2>
+  <p>Open to remote roles where operations depth and correct AI deployment meet: forward-deployed and AI-deployment engineering, implementation and solutions consulting, BI and SQL development, data and supply-chain analysis, and WMS.</p>
+
+  <h2>FAQ</h2>
+  <dl>
+    {faq.map((f) => (<><dt>{f.q}</dt><dd>{f.a}</dd></>))}
+  </dl>
+
+  <p class="meta">This page has a machine-readable companion at <a href="/tom-pinder/brief.md">/tom-pinder/brief.md</a>, written in the brief.md spec.</p>
+</Base>
