@@ -23,7 +23,9 @@ This isn't a hunch. When RAND interviewed 65 experienced data scientists and eng
 
 Fred Brooks put it plainly almost forty years ago: "The hardest single part of building a software system is deciding precisely what to build." AI didn't change that. It made building cheap, which makes deciding the expensive part.
 
-[TOM: one paragraph from the floor. A real request that came in vague, what got built from the assumption, and what it cost when the assumption was wrong. Anonymized. A number if you have one: hours, a rebuild, a go-live slip.]
+I've paid for this one myself. At a past job, space in our main DC was tight, so part of the inventory sat in offsite warehouses while the WMS carried it in a virtual location inside the DC. While the ops team worked through consolidations, they asked for a process that would flag which offsite inventory needed to come back to the main building so they could fill orders. It was genuinely complex. We brought in outside consultants to essentially replicate the allocation process inside the WMS, at consultant hourly rates. Then came our own time: testing the logic, adjusting it to ops feedback, retesting, adjusting again. It turned into a mini project of close to six months. It was entirely throwaway work, and it ended up barely used.
+
+Looking back, the questions that would have caught it before the first consultant hour were simple ones. How long will the offsite setup last? What will the team do differently once the list exists? What would make us stop? Those are cheap questions. Six months is not a cheap answer.
 
 ## Why can't the person asking just write the spec?
 
@@ -53,7 +55,7 @@ The gate is the part most intakes skip, and it's the most useful one. Missing in
 
 ## What does that look like on a real request?
 
-Here's the short-pick report going through intake-kit, the tool I built for this. The sources are synthetic, but the shape is the one I've seen on every floor I've worked.
+Here's the short-pick report going through intake-kit, the tool I built for this. The sources are synthetic, but the shape is a familiar one from the floor.
 
 **Round 1: send a question packet.** The packet asks the nine required questions for a data report in plain language. Sam, the ops supervisor, replies by email. The intake reads the reply against every question:
 
