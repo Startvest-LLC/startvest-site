@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { POSITIONING, CTA_LINE } from '../consts';
+import { CTA_LINE, AUTHOR } from '../consts';
 import { getPublishedPosts, formatDate } from '../lib/posts';
 
 const posts = (await getPublishedPosts()).slice(0, 3);
@@ -9,25 +9,35 @@ const posts = (await getPublishedPosts()).slice(0, 3);
   <section class="hero">
     <p class="eyebrow">Tom Pinder · StartVest</p>
     <h1>Vague operational asks, turned into <em>working AI systems.</em></h1>
-    <p class="lede">{POSITIONING}</p>
+    <p class="lede">Fifteen years running Manhattan SCALE across multi-site distribution. Now I build the AI tools, with the guardrails visible.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#work">See the work</a>
+      <a href="/contact">Get in touch</a>
+      <a href={AUTHOR.linkedin}>LinkedIn</a>
+      <a href={AUTHOR.github}>GitHub</a>
+    </div>
     <ul class="hero-stats">
-      <li><b>15</b> years on the floor</li>
       <li>Manhattan SCALE · SQL Server · SSRS</li>
-      <li>Built with Claude Code</li>
+      <li>Built with Claude Code · <b>spec, guardrails, testing: mine</b></li>
     </ul>
   </section>
 
   <h2 class="loc"><span class="num">01</span>The problem</h2>
   <p>Operations teams hand engineers vague requests. Nobody can write the spec, so scope churns and the pilot stalls. Most AI projects in operations don't fail on the model. They fail between the ask and the build, and again at adoption.</p>
-  <p>I spent 15 years on the operations side: Manhattan SCALE WMS across multi-site distribution networks, ERP integrations, and the SQL Server and SSRS reporting a floor actually runs on. Now I build the AI tools, with the guardrails and the checks visible.</p>
+  <p>I lived on the operations side of that gap: WMS go-lives, ERP integrations over EDI and XML, and the SQL Server and SSRS reporting a floor actually runs on.</p>
 
-  <h2 class="loc"><span class="num">02</span>Work you can inspect</h2>
+  <h2 class="loc" id="work"><span class="num">02</span>Work you can inspect</h2>
   <div class="labels">
     <article class="label-card">
       <div class="label-top"><span>Open source</span><span>tjpinder/intake-kit</span></div>
       <div class="label-body">
-        <h3><a href="https://github.com/tjpinder/intake-kit">intake-kit</a></h3>
+        <h3>intake-kit</h3>
         <p>Turns a vague ops request into a build-ready spec. A guided intake gates each item, and every requirement traces back to the requester's own words.</p>
+        <p class="result"><span>Result</span>Vague request to build-ready spec in 30 minutes.</p>
+      </div>
+      <div class="label-actions">
+        <a class="btn btn-sm" href="https://agreeable-hill-0ede1650f.5.azurestaticapps.net/?sample">Watch a sample intake</a>
+        <a href="https://github.com/tjpinder/intake-kit">Repo</a>
       </div>
       <div class="barcode" aria-hidden="true"></div>
       <p class="barcode-id" aria-hidden="true">SPEC-0001</p>
@@ -35,8 +45,13 @@ const posts = (await getPublishedPosts()).slice(0, 3);
     <article class="label-card">
       <div class="label-top"><span>Open source</span><span>tjpinder/sql-xray</span></div>
       <div class="label-body">
-        <h3><a href="https://github.com/tjpinder/sql-xray">sql-xray</a></h3>
+        <h3>sql-xray</h3>
         <p>A read-only SSRS and SQL Server estate scanner. It finds duplicates, contradictions, dependencies, and risks, then produces a keep, consolidate, retire, or review list.</p>
+        <p class="result"><span>Result</span>A 62-report demo estate analyzed in seconds. Every finding cites its source lines.</p>
+      </div>
+      <div class="label-actions">
+        <a class="btn btn-sm" href="https://github.com/tjpinder/sql-xray#try-it-on-the-demo-estate">Run the demo</a>
+        <a href="https://github.com/tjpinder/sql-xray">Repo</a>
       </div>
       <div class="barcode" aria-hidden="true"></div>
       <p class="barcode-id" aria-hidden="true">SCAN-0002</p>
