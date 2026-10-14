@@ -4,7 +4,7 @@ description: "Most automation projects fail before anyone writes code, in the ga
 publishedAt: 2026-10-14
 category: "AI Enablement Methods"
 tags: []
-draft: true
+draft: false
 ---
 
 You turn a vague automation request into a build-ready spec by refusing to fill the gaps yourself. Ask structured questions, quote every answer in the requester's own words, put conflicting answers back in front of them instead of picking one, make the owner define every business term, and give each item a Go, Gather more, or Don't Build decision before anyone writes code. The spec is done when nothing in it rests on a guess.
