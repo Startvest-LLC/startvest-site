@@ -1,11 +1,11 @@
 export const SITE_URL = 'https://startvest.ai';
 export const SITE_NAME = 'StartVest';
 export const SITE_DESCRIPTION =
-  'Tom Pinder turns messy operational workflows into working AI systems. Fifteen years running warehouse, distribution, and ERP/WMS operations.';
+  'Tom Pinder turns messy operational workflows into working AI systems. Fifteen years running the systems, integrations, and reporting that operations teams depend on.';
 
 // Used word for word on the author box, LinkedIn headline, and GitHub profile README.
 export const POSITIONING =
-  'I turn messy operational workflows into working AI systems. Fifteen years running warehouse, distribution, and ERP/WMS operations; now building AI-enabled tools that operators actually adopt.';
+  'I turn messy operational workflows into working AI systems. Fifteen years running the systems, integrations, and reporting that operations teams depend on; now building AI-enabled tools that operators actually adopt.';
 
 export const AUTHOR = {
   name: 'Tom Pinder',
