@@ -2,6 +2,8 @@
 # First match wins. Real pages (/, /blog, /blog/*, /tom-pinder, /capabilities, /contact) are never matched.
 
 # Kept meaning
+/brief.md                         /tom-pinder/brief.md 301
+/.well-known/brief.md             /tom-pinder/brief.md 301
 /about-us                         /tom-pinder     301
 /about                            /tom-pinder     301
 /govcon/capabilities              /capabilities   301

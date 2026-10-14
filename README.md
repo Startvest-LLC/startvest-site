@@ -56,7 +56,7 @@ npx wrangler dev     # serve dist/ the way Workers static assets will, with _red
 
 Do these before you uncomment `routes` in `wrangler.jsonc`:
 
-- [ ] **Decide what happens to the `startvest-brief-md` Worker routes.** A separate Worker (`E:\development\buffer-engagement-fetcher\cloudflare-workers\startvest-brief-md`) holds the routes `startvest.ai/brief.md` and `startvest.ai/.well-known/brief.md`. It proxies an outdated "startvest-govcon" brand brief from marketing.startvest.ai. Worker routes take priority over this site's static assets, so those two paths keep serving the old brief until that Worker's routes are removed or changed.
+- [ ] **Remove the `startvest-brief-md` Worker routes** (run `wrangler delete` in `E:\developmentuffer-engagement-fetcher\cloudflare-workers\startvest-brief-md`, or remove its routes in the dashboard). That Worker holds `startvest.ai/brief.md` and `startvest.ai/.well-known/brief.md`, and Worker routes take priority over static assets. Do this before switching DNS so this site's 301s take over: `/brief.md` and `/.well-known/brief.md` to `/tom-pinder/brief.md`.
 - [ ] Check the DNS automation in the idealift repo (`infra/cloudflare/main.tf`, `scripts/cloudflare-dns-sync.sh`), so a later sync doesn't revert the startvest.ai records.
 - [ ] Remove or replace the existing proxied `startvest.ai` and `www` DNS records that point at Azure SWA. Attaching a Worker custom domain needs the hostname free.
 - [ ] Uncomment `routes` in `wrangler.jsonc`, then run `npx wrangler deploy`.
