@@ -23,7 +23,7 @@ This is the cleanup you do before a migration, and before you point any AI at yo
 
 **Nobody opening it isn't nobody getting it.** A report emailed to the regional managers every Monday has an audience, even if no one has clicked it on the portal since 2019.
 
-I've lived the other side of this. Before one migration, we reviewed the full report list with operations more than once. Plenty of the reports pointed at databases nobody recognized anymore. But the dead weight wasn't the problem. The problem was the reports nobody named as key to migrate, which turned out to be needed and became last-minute work during the cutover.
+I've lived the other side of this. Before one migration, we had close to 100 reports to evaluate, and we reviewed the list with operations more than once. Plenty of them pointed at databases nobody recognized anymore. But the dead weight wasn't the problem. The problem was the reports nobody named as key to migrate, which turned out to be needed and became last-minute work during the cutover.
 
 Asking people which reports matter finds the ones they think about. It misses the ones they don't think about until they're gone. That's why the evidence should come from the log, and why the tool should err toward keeping a report, not retiring it.
 

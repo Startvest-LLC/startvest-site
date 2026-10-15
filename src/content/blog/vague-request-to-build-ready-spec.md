@@ -23,9 +23,9 @@ This isn't a hunch. When RAND interviewed 65 experienced data scientists and eng
 
 Fred Brooks put it plainly almost forty years ago: "The hardest single part of building a software system is deciding precisely what to build." AI didn't change that. It made building cheap, which makes deciding the expensive part.
 
-I've paid for this one myself. At a past job, operations asked for a process to work around a temporary inventory setup. It was genuinely complex, so we brought in outside help, and then came our own time: testing the logic, adjusting it to ops feedback, retesting, adjusting again. It ran for months, and it ended up barely used.
+I've paid for this one myself. At a past job, part of our inventory was stored offsite but carried in a virtual location in the WMS. Operations asked for a process to flag which of it needed to come back so they could fill orders. It was genuinely complex, so we brought in outside consultants to replicate the allocation logic inside the WMS, at consultant rates. Then came our own time: testing the logic, adjusting it to ops feedback, retesting, adjusting again. It ran for about six months, and it ended up barely used.
 
-The problem was temporary, and we built a permanent, systemic answer to it. Nobody communicated how long the temporary setup was expected to last, so nobody weighed that against months of build. Had we known, we might not have pursued a systemic solution at all. One question before the work started would have changed the decision: how long will we need this? Cheap question. Expensive answer.
+The problem was temporary, and we built a permanent, systemic answer to it. Nobody communicated how long the offsite setup was expected to last, so nobody weighed that against six months of build. Had we known, we might not have pursued a systemic solution at all. One question before the first consultant hour would have changed the decision: how long will we need this? Cheap question. Expensive answer.
 
 ## Why can't the person asking just write the spec?
 
