@@ -4,7 +4,7 @@ description: "The obvious query for unused SSRS reports is wrong in four ways, a
 publishedAt: 2026-10-15
 category: "Operational AI"
 tags: []
-draft: true
+draft: false
 ---
 
 To find SSRS reports nobody uses, don't just look for reports with no rows in the execution log. Check that the log covers the whole window first, protect subreports and linked reports (SSRS never logs them directly), and count subscription deliveries as use. Anything left with no runs and no active subscription is a candidate to retire, not a report to delete.
