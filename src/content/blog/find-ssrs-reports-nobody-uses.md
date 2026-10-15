@@ -23,7 +23,9 @@ This is the cleanup you do before a migration, and before you point any AI at yo
 
 **Nobody opening it isn't nobody getting it.** A report emailed to the regional managers every Monday has an audience, even if no one has clicked it on the portal since 2019.
 
-[TOM: one or two lines from your SSRS years. How many reports were on the server you ran, or a time a "dead" report turned out to matter. Anonymized.]
+I've lived the other side of this. Before one cutover we had to evaluate close to 100 reports. A bulk of them pointed at databases I hadn't seen in the five years I'd been there. We walked the list with operations three or four times. The dead weight wasn't the problem. The problem was the reports nobody named as key to migrate, which turned out to be needed and became last-minute development during the cutover.
+
+Asking people which reports matter finds the ones they think about. It misses the ones they don't think about until they're gone. That's why the evidence should come from the log, and why the tool should err toward keeping a report, not retiring it.
 
 ## What does the script do instead?
 
