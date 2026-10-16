@@ -27,7 +27,7 @@ Anything where a mistake is cheap to see and cheap to fix.
 
 - **Implementation.** The code itself, against a spec that says what it must do.
 - **Tests, written to my bar.** The agent writes the tests. I decide what the tests have to prove.
-- **Configuration and plumbing.** Build setup, deploy config, the 99 redirect rules that sent the old site's URLs somewhere sensible.
+- **Configuration and plumbing.** Build setup, deploy config, the 101 redirect rules that sent the old site's URLs somewhere sensible.
 - **First drafts.** READMEs, docs, and copy. A draft is meant to be rewritten.
 - **Research I can verify.** Finding what a system does, then showing me where it found it.
 
