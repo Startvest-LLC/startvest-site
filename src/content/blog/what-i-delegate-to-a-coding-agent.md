@@ -66,7 +66,7 @@ For intake-kit, I built automated evals: simulated requesters with persona cards
 
 So for a while the plan was that the evals were the test. I reversed that.
 
-The second live test of the rebuilt interview is why. I drove it by hand, on a real enablement request. The automated gates said it was right, and it was: correct type, correct gate, zero invented quotes, no loops. It still exposed five gaps:
+The second live test of the rebuilt interview is why. I drove it by hand, on the enablement-kit request. The automated gates said it was right, and it was: correct type, correct gate, zero invented quotes, no loops. It still exposed five gaps:
 
 - the gate's reasons didn't list every unmet requirement for a Go
 - the discovery brief had no open questions in it
