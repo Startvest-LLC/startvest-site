@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "check:voice": "node scripts/check-voice.mjs dist",
-    "deploy": "npm run build && npm run check:voice && npx wrangler deploy"
+    "deploy": "npm run build && npm run check:voice && npm run check:build && npx wrangler deploy",
+    "check:build": "node scripts/check-build.mjs dist"
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",
