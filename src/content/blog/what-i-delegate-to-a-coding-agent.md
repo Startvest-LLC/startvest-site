@@ -4,7 +4,7 @@ description: "I direct a coding agent to write most of my code. I never delegate
 publishedAt: 2026-10-16
 category: "AI Enablement Methods"
 tags: []
-draft: true
+draft: false
 ---
 
 I delegate implementation to a coding agent: the code, the tests it writes against my spec, the config, the first draft of most docs. I never delegate four things: what the thing is for, what counts as done, what counts as true, and the moment a person actually looks at it. The agent is fast and usually right. Those four are where "usually" isn't good enough.
