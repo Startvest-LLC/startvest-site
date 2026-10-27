@@ -1,5 +1,5 @@
 ---
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, AUTHOR } from '../consts';
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, AUTHOR, GA_MEASUREMENT_ID } from '../consts';
 
 interface Props {
   title: string;
@@ -67,9 +67,18 @@ const sitewide = [
     <meta property="og:site_name" content={SITE_NAME} />
     <meta name="twitter:card" content="summary" />
     {[...sitewide, ...jsonLd].map((d) => <script type="application/ld+json" set:html={JSON.stringify(d)} />)}
-    <!-- Cloudflare Web Analytics slot. Uncomment and set the token when enabled.
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_ME"}'></script>
-    -->
+    {GA_MEASUREMENT_ID && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+        <script is:inline define:vars={{ id: GA_MEASUREMENT_ID }}>
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { dataLayer.push(arguments); };
+          gtag('js', new Date());
+          // No ad signals: the privacy page promises no ad trackers.
+          gtag('config', id, { allow_google_signals: false, allow_ad_personalization_signals: false });
+        </script>
+      </>
+    )}
   </head>
   <body>
     <header class="site-header">

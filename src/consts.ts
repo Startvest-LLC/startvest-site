@@ -20,3 +20,6 @@ export const CATEGORIES = ['Operational AI', 'AI Enablement Methods'] as const;
 export const POV_TAG = 'Point of View';
 
 export const CTA_LINE = 'I help ops teams do this.';
+
+// GA4 measurement ID (G-XXXXXXXXXX). Empty string disables the tag.
+export const GA_MEASUREMENT_ID = 'G-5SL1TT2PRK';
